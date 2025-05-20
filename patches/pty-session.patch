@@ -44,7 +44,7 @@ index 815264d1a..c7b56c5ab 100644
  			attrs.c_lflag &= ~ECHO;
  
 +#ifdef __MVS__
-+		attrs.c_oflag |= OPOST | ONLCR;
++		attrs.c_oflag |= OPOST ;
 +#endif
 +
  		tcsetattr(pty->slave, TCSANOW, &attrs);
