@@ -20,7 +20,7 @@ index e4a3434..d400435 100644
  		rc = replay_emit_step_data(ss->setup, ss->step, fd);
 -		fdatasync(fd);
 +#ifndef __MVS__
-+                fdatasync(fd);
++                fsync(fd);
 +#else
 +                fsync(fd);
 +#endif
